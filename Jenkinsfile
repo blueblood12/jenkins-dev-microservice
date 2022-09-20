@@ -1,11 +1,19 @@
 pipeline {
-		//agent any
-		agent{ docker { image 'node:18.9'}}
+		agent any
+		//agent{ docker { image 'node:18.9'}}
 		stages {
 			stage('Build'){
 				steps{
-					sh 'node --version'
+					//sh 'node --version'
 					echo "Build"
+					echo "$PATH"
+					echo "BULID_NUMBER - $env.BULID_NUMBER"
+					echo "BULID_ID - $env.BULID_ID"
+					echo "TAG_TIMESTAMP - $env.TAG_TIMESTAMP"
+					echo "JOB_BASE_NAME - $env.JOB_BASE_NAME"
+					echo "EXECUTOR_NUMBER - $env.EXECUTOR_NUMBER"
+					echo "BUILD_URL - $env.BUILD_URL"
+					echo "JENKINS_URL - $env.JENKINS_URL"
 				}
 			}
 			stage('Test'){
