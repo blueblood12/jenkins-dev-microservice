@@ -12,7 +12,7 @@ pipeline {
 			stage('Build'){
 				steps{
 					sh 'mvn --version'
-					//sh 'docker version'
+					sh 'docker version'
 					echo "Build"
 					echo "PATH - $PATH"
 					echo "BULID_NUMBER - $env.BULID_NUMBER"
