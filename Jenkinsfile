@@ -7,13 +7,14 @@ pipeline {
 			mavenHome = tools 'MyMaven'
 			PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
 		}
+		
 		stages {
 			stage('Build'){
 				steps{
 					sh 'mvn --version'
 					sh 'docker version'
 					echo "Build"
-					echo "$PATH"
+					echo "PATH - $PATH"
 					echo "BULID_NUMBER - $env.BULID_NUMBER"
 					echo "BULID_ID - $env.BULID_ID"
 					echo "TAG_TIMESTAMP - $env.TAG_TIMESTAMP"
