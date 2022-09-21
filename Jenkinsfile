@@ -3,8 +3,8 @@ pipeline {
 		//agent{ docker { image 'maven:3.6.3'}}
 
 		environment {
-			dockerHome = tool 'MyDocker'
 			mavenHome = tool 'MyMaven'
+			dockerHome = tool 'MyDocker'
 			 PATH="$dockerHome/bin:$mavenHome/bin:$PATH"
 		}
 		
@@ -12,7 +12,7 @@ pipeline {
 			stage('Build'){
 				steps{
 					sh 'mvn --version'
-					sh 'docker version'
+					sh 'docker --version'
 					echo "Build"
 					echo "PATH - $PATH"
 					echo "BULID_NUMBER - $env.BULID_NUMBER"
