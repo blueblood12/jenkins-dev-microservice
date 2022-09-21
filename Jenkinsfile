@@ -17,11 +17,9 @@ pipeline {
 					echo "PATH - $PATH"
 					echo "BULID_NUMBER - $env.BULID_NUMBER"
 					echo "BULID_ID - $env.BULID_ID"
-					echo "TAG_TIMESTAMP - $env.TAG_TIMESTAMP"
-					echo "JOB_BASE_NAME - $env.JOB_BASE_NAME"
-					echo "EXECUTOR_NUMBER - $env.EXECUTOR_NUMBER"
+					echo "JOB_NAME - $env.JOB_NAME"
 					echo "BUILD_URL - $env.BUILD_URL"
-					echo "JENKINS_URL - $env.JENKINS_URL"
+					echo "BUILD_TAG - $env.BUILD_TAG"
 				}
 			}
 			stage('Test'){
