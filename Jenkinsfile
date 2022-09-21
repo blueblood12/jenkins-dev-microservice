@@ -4,18 +4,18 @@ pipeline {
 
 		environment {
 			dockerHome = tool 'MyDocker'
-			mavenHome = tools 'MyMaven'
+			mavenHome = tool 'MyMaven'
 			PATH= "dockerHome/bin:mavenHome/bin:$PATH"
 		}
 		
 		stages {
 			stage('Build'){
 				steps{
-					//sh 'mvn --version'
-					//sh 'docker version'
+					sh 'mvn --version'
+					sh 'docker version'
 					echo "Build"
 					echo "PATH - $PATH"
-					echo "BULID_NUMBER - $env.BULID_NUMBER"
+					echo "BULID_NUMBER - ${env.BULID_NUMBER}"
 					echo "BULID_ID - $env.BULID_ID"
 					echo "JOB_NAME - $env.JOB_NAME"
 					echo "BUILD_URL - $env.BUILD_URL"
