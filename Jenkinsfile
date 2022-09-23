@@ -22,6 +22,7 @@ pipeline {
 					echo "BUILD_TAG - $env.BUILD_TAG"
 				}
 			}
+
 		stages{
 			stage ('compile') {
 				steps{
@@ -29,6 +30,7 @@ pipeline {
 				}
 			}
 		}
+		
 			stage('Test'){
 				steps{
 					sh "mvn test"
